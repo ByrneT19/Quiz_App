@@ -46,11 +46,12 @@ $(document).ready(function() {
 };
 //will generate the image in the container that is associated with the answer, maybe I need two arrays? one
 //for images and one for questions?
+https://stackoverflow.com/questions/8027168/assigning-java-images-to-different-instances-of-objects-playing-cards
 function displayImage() {
     
 };*/
 
- //if else function provides feedback for right or wrong answers
+ /*//if else function provides feedback for right or wrong answers
 function popUpBox(submit) {
     $('.radio').submit(function() {
         event.preventDefault;

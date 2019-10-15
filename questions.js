@@ -5,7 +5,7 @@ const QUESTIONS = [ //event will pull 4 random indexes out - 1 will be correct
         correctAnswer: "Wǒ xiǎng yào qù fēijī chǎng - 我想要去飞机场",
         questionImage: 'airport.jpg',
         alt: 'An image of a plane landing'
-        //answers: 
+        //answers
     },
 
     {

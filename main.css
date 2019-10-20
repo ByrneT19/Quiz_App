@@ -18,7 +18,7 @@ h1, h2, h3 {
 
 .head-text {
     opacity: 0.75;
-    background-color:  rgb(255, 187, 0);
+    background-color: rgb(255, 187, 0);
     border-radius: 20px;
     padding: 0px 8px;
 }
@@ -69,7 +69,7 @@ h3 {
 }
 
 .Q-prompt {
-    /*display: none;*/
+    display: none;
     font-size: 25px;
     margin-left: 5%;
     margin-bottom: 8px;
@@ -78,7 +78,7 @@ h3 {
 
 form {
     /*display: none;*/
-    float: left;
+    /*float: left;*/
     margin-left: 5%;
     font-size: 25px;
     background-color: rgb(255, 187, 0);
@@ -87,14 +87,14 @@ form {
     width: 43%;
 }
 
-img, .hanzi {
-    display: inline-block;
+.grid, #zhongGuoImg {
+    float: left;
 }
 
 img {
     width: 700px;
     height: 500px;
-    float: right;
+    /*float: right;*/
     margin-right: 1%;
     border: 5px solid rgb(255, 187, 0);  
     border-radius: 2px;
@@ -106,8 +106,9 @@ img {
     writing-mode: vertical-rl;
     text-orientation: upright;
     float: right;
-    margin-right: 0%;
-    margin-left: 0px;
+    /*margin-right: 0%;
+    margin-left: 0px;*/
+    text-align: center;
     font-size: 140px;
     letter-spacing: 50px;
     font-family: 'Zhi Mang Xing', cursive;
@@ -116,7 +117,7 @@ img {
     opacity: 0.80;
 }
 
-.grid {
+.grid, #zhongGuoImg, .han {
     margin-top: 90px;
 }
 
@@ -187,174 +188,34 @@ img {
 
     #zhongGuoImg {
         display: none;
-        float: left;
     }
 
     .hanzi {
         font-size: 50px;
         writing-mode: horizontal-tb;
-        /*text-align: center;*/
+        align-self: flex-end;
         margin-top: 100px;
         margin-bottom: 0px;
-        margin-left: 8px;
-        float: right;
     }
 };
 
 @media screen and (min-width: 321px) and (max-width: 420px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    h1, h2, h3 {
-        font-size: 30px;
-        display: flex;
-    }
-
-    h3 {
-        display: none;
-        margin-left: 4px;
-    }
-
-    #quiz-start {
-        font-size: 20px;
-        width: 40%;
-    }
-
-    form {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        width: 90%;
-        height: 40%;
-        padding-bottom: 10px;
-    }
-
-    #zhongGuoImg {
-        display: none;
-    }
-
-    .hanzi {
-        font-size: 50px;
-        writing-mode: horizontal-tb;
-        text-align: center;
-        margin-top: 100px;
-        margin-bottom: 0px;
-        margin-left: 8px;
-    }
+    
 };
 
 @media screen and (min-width: 421px) and (max-width: 767px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    h1, h2, h3 {
-        font-size: 30px;
-        background-size: cover;
-    }
-
-    h3 {
-        display: none;
-        margin-left: 4px;
-    }
-
-    #quiz-start {
-        font-size: 20px;
-        width: 40%;
-    }
-
-    form {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 0;
-        margin-right: 0;
-        width: 90%;
-        height: 40%;
-        padding-bottom: 10px;
-    }
-
-    #zhongGuoImg {
-        display: none;
-    }
-
-    .hanzi {
-        font-size: 50px;
-        writing-mode: horizontal-tb;
-        text-align: center;
-        margin-top: 100px;
-        margin-bottom: 0px;
-        margin-left: 8px
-    }
+    
 };
 
 @media screen and (min-width: 768px) {
-    body {
-        /*display: flex;*/
-        flex-direction: column;
-        justify-content: flex-start;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    h1, h2, h3 {
-        display: block;
-        background-size: cover;
-    }
-
-    h2 {
-        font-size: 35px;
-    }
-
-    h3 {
-        display: none;
-        margin-left: 4px;
-    }
-
-    #quiz-start {
-        font-size: 30px;
-        width: 40%;
-    }
-
-    form {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 0;
-        margin-right: 0;
-        width: 90%;
-        height: 40%;
-        padding-bottom: 10px;
-    }
-
-    #zhongGuoImg {
-        display: inline-block;
-        width: 50px;
-        height: 20px;
-    }
-
-    .hanzi {
-        font-size: 20px;
-        writing-mode: horizontal-tb;
-        /*text-align: center;*/
-        margin-top: 100px;
-        margin-bottom: 0px;
-        margin-left: 8px;
-        float: right;
-        position: absolute;
-    }
+    
 };
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+};
+
+@media screen and (min-width: 1025px) {
 
 };
 

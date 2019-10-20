@@ -3,7 +3,7 @@ function startQuiz() {
         $('#quiz-start').hide();
         $('h2').hide();
         $('h3').show();
-        ('.grid').hide();
+       /* $('.grid').hide();*/
         /*generateQuestion();*/
         console.log(event);
     })
@@ -13,7 +13,7 @@ let questionNumber = 0;
 let scoreNum = 0;
 
 function generateQuestion() {
-    $(startQuiz, '.grid').show();
+    /*$(startQuiz, '.grid').show();*/
     if (questionNumber < QUESTIONS.length) 
     console.log(generateQuestion);
     {   
@@ -36,7 +36,7 @@ function generateQuestion() {
             </form>
         </div>`)
     }
-    $('#zhongGuoImg').add(`src="url(${QUESTIONS[questionNumber].questionImage})" alt="${QUESTIONS[questionNumber].alt}"`)
+    $('#zhongGuoImg').append(`src=url(${QUESTIONS[questionNumber].questionImage}) alt=${QUESTIONS[questionNumber].alt}`)
 };
 
 function runQuiz() {

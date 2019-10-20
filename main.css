@@ -69,14 +69,15 @@ h3 {
 }
 
 .Q-prompt {
-    display: none;
+    /*display: none;*/
     font-size: 25px;
     margin-left: 5%;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
+    margin-top: 5px;
 }
 
 form {
-    display: none;
+    /*display: none;*/
     float: left;
     margin-left: 5%;
     font-size: 25px;
@@ -98,7 +99,7 @@ img {
     border: 5px solid rgb(255, 187, 0);  
     border-radius: 2px;
     background-color: white;  
-    display: none;
+    /*display: none;*/
 }
 
 .hanzi {
@@ -184,7 +185,7 @@ img {
         padding-top: 1px;
     }
 
-    .zhongGuoImg {
+    #zhongGuoImg {
         display: none;
         float: left;
     }
@@ -233,7 +234,7 @@ img {
         padding-bottom: 10px;
     }
 
-    .zhongGuoImg {
+    #zhongGuoImg {
         display: none;
     }
 
@@ -282,7 +283,7 @@ img {
         padding-bottom: 10px;
     }
 
-    .zhongGuoImg {
+    #zhongGuoImg {
         display: none;
     }
 
@@ -335,7 +336,7 @@ img {
         padding-bottom: 10px;
     }
 
-    .zhongGuoImg {
+    #zhongGuoImg {
         display: inline-block;
         width: 50px;
         height: 20px;

@@ -227,8 +227,8 @@ const QUESTIONS = [
             "Wǒ gǎnjué bú shūfú - 我感觉不舒服",
             "Jǐngchá jú zài nǎlǐ? - 警察局在哪里?",
             "Wǒ xiǎng yào qù bówùyuàn - 我想要去博物院",
-        questionImage: 'sick.jpg'
         ],
+        questionImage: 'sick.jpg',
         correctAnswer: "Wǒ gǎnjué bú shūfú - 我感觉不舒服",
         alt: 'An image of various medications'
     },

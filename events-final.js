@@ -3,19 +3,40 @@ function startQuiz() {
         $('#quiz-start').hide();
         $('h2').hide();
         $('h3').show();
-        generateQuestion();
+        ('.grid').hide();
+        /*generateQuestion();*/
         console.log(event);
     })
 };
 
-function generateQuestion() {
-    let q = QUESTIONS;
-    let radioHTML = "";
+let questionNumber = 0;
+let scoreNum = 0;
 
-    $.each(q, function(index, value) {
-        radioHTML += '<label><input type="radio" name="radio_group" value="'+ value + '</label>';
-    })
-    $("#radio-group").html(radioHTML);
+function generateQuestion() {
+    $(startQuiz, '.grid').show();
+    if (questionNumber < QUESTIONS.length) 
+    console.log(generateQuestion);
+    {   
+        $('main').append
+        (`<div class="grid">
+            <form>
+            <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span>?</p>
+            <label class="answerOptions">
+            <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
+            <span>${QUESTIONS[questionNumber].answers[0]}</span></label><br>
+            <label class="answerOptions">
+            <input type="radio" value="${QUESTIONS[questionNumber].answers[1]}" name="answer" required>
+            <span>${QUESTIONS[questionNumber].answers[1]}</span></label><br>
+            <label class="answerOptions">
+            <input type="radio" value="${QUESTIONS[questionNumber].answers[2]}" name="answer" required>
+            <span>${QUESTIONS[questionNumber].answers[2]}</span></label><br>
+            <label class="answerOptions">
+            <input type="radio" value="${QUESTIONS[questionNumber].answers[3]}" name="answer" required>
+            <span>${QUESTIONS[questionNumber].answers[3]}</span></label><br>
+            </form>
+        </div>`)
+    }
+    $('#zhongGuoImg').add(`src="url(${QUESTIONS[questionNumber].questionImage})" alt="${QUESTIONS[questionNumber].alt}"`)
 };
 
 function runQuiz() {

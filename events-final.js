@@ -3,8 +3,7 @@ function startQuiz() {
         $('#quiz-start').hide();
         $('h2').hide();
         $('h3').show();
-       /* $('.grid').hide();*/
-        /*generateQuestion();*/
+        generateQuestion();
         console.log(event);
     })
 };
@@ -13,7 +12,6 @@ let questionNumber = 0;
 let scoreNum = 0;
 
 function generateQuestion() {
-    /*$(startQuiz, '.grid').show();*/
     if (questionNumber < QUESTIONS.length) 
     console.log(generateQuestion);
     {   
@@ -35,13 +33,68 @@ function generateQuestion() {
             <span>${QUESTIONS[questionNumber].answers[3]}</span></label><br>
             </form>
         </div>`)
-    }
-    $('#zhongGuoImg').append(`src=url(${QUESTIONS[questionNumber].questionImage}) alt=${QUESTIONS[questionNumber].alt}`)
+    } 
+        $('#zhongGuoImg').attr("src=url(${QUESTIONS[questionNumber].questionImage}");        
+};
+
+/*function rightOrWrong() {
+    $('.radio'[name = 'answer']).submit(function() {
+        event.preventDefault;
+        console.log(event);
+        $('this').on('click', function() {
+            if($(this).val() == question) {
+                $('.pop-up-correct').show();
+                currentQuestion++;
+                scoreNum++;
+                $('.scoreNum').text();
+                generateQuestion();
+            } else {
+                $('.pop-up-wrong').show();
+                currentQuestion++;
+                generateQuestion();
+            }
+        })
+    })
+};*/
+function rightOrWrong() {
+    if('.radio' [name = 'answer'] == QUESTIONS[questionNumber].correctAnswer) {
+        //answer is correct
+        scoreNum++;
+        correctReturn();
+        } else {
+            wrongReturn();
+        }
+        generateQuestion++;
+        generateQuestion();
+    };
+
+function correctReturn() {
+$(rightOrWrong).show
+(`
+<div class="pop-up-correct">
+    <p>Correct!</p>
+    <p class="pop-up-correct-han">不错</p>
+</div>
+`);
+};
+function score() {
+scoreNum++;
+$('.scoreNum').text(Correct);
+};
+
+function wrongReturn() {
+$(rightOrWrong).show
+(`
+<div class="pop-up-wrong">
+    <p>Incorrect!</p>
+    <p class="pop-up-wrong-han">错误</p>
+</div>
+`)
 };
 
 function runQuiz() {
     startQuiz();
-    generateQuestion();
+    //rightOrWrong();
 };
 
 $(runQuiz);

@@ -54,7 +54,9 @@ function generateQuestion() {
     });            $(addEventListener).click('input[name=answer]:radio', function() {
 });*/
 function rightOrWrong() {
-    $('input[name=answer]:radio').on('click', function() {
+    $('input[name=answer]:radio').on('click', function(e) {
+        e.preventDefault(e);
+        console.log('click');        
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
             scoreNum++;
             score();
@@ -64,6 +66,7 @@ function rightOrWrong() {
         }
     })
 };
+
 
 /*function rightOrWrong() {
     $('input[name=answer]:radio').click(function() {

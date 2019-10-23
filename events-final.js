@@ -51,10 +51,10 @@ function generateQuestion() {
             $('.showbrand').hide();
 
         }
-    });
+    });            $(addEventListener).click('input[name=answer]:radio', function() {
 });*/
 function rightOrWrong() {
-    $(addEventListener).click('input[name=answer]:radio', function() {
+    $('input[name=answer]:radio').on('click', function() {
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
             scoreNum++;
             score();
@@ -105,7 +105,7 @@ $(rightOrWrong).show
 
 function runQuiz() {
     startQuiz();
-    //rightOrWrong();
+    rightOrWrong();
 };
 
 $(runQuiz);

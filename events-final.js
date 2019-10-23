@@ -53,7 +53,7 @@ function generateQuestion() {
         }
     });            $(addEventListener).click('input[name=answer]:radio', function() {
 });*/
-function rightOrWrong() {
+/*function rightOrWrong() {
     $('input[name=answer]:radio').on('click', function(e) {
         e.preventDefault(e);
         console.log('click');        
@@ -65,21 +65,22 @@ function rightOrWrong() {
             wrongReturn();
         }
     })
-};
+};*/
 
-
-/*function rightOrWrong() {
-    $('input[name=answer]:radio').click(function() {
-        if ($('input[name = answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
-            //answer is correct
+function rightOrWrong() {
+    $('main').on('click', 'input[name=answer]:radio', function() {
+       console.log('click');
+        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
             scoreNum++;
             score();
             correctReturn();
-            } else {
-                wrongReturn();
-            }
-            //generateQuestion();
-    };*/
+        }else{
+            wrongReturn();
+        }
+    })
+};
+
+
 
 function correctReturn() {
 $(rightOrWrong).show

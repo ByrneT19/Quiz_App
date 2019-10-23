@@ -15,8 +15,8 @@ function generateQuestion() {
     if (questionNumber < QUESTIONS.length) 
     console.log(generateQuestion);
     {   
-        $('main').append
-        (`<div class="grid">
+        $('main').prepend
+        (`<div class="zhongGuoImg">
             <form>
             <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span>?</p>
             <label class="answerOptions">
@@ -34,39 +34,49 @@ function generateQuestion() {
             </form>
         </div>`)
     } 
-        $('#zhongGuoImg').attr("src=url(${QUESTIONS[questionNumber].questionImage}");        
+        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);        
+};
+
+/*$(function () {
+    $('.showstore').hide();
+    $('.showbrand').hide();
+
+    $("input[name=user-type]:radio").click(function () {
+        if ($('input[name=user-type]:checked').val() == "Brand") {
+            $('.showstore').hide();
+            $('.showbrand').show();
+
+        } else if ($('input[name=user-type]:checked').val() == "Store") {
+            $('.showstore').show();
+            $('.showbrand').hide();
+
+        }
+    });
+});*/
+function rightOrWrong() {
+    $(addEventListener).click('input[name=answer]:radio', function() {
+        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
+            scoreNum++;
+            score();
+            correctReturn();
+        }else{
+            wrongReturn();
+        }
+    })
 };
 
 /*function rightOrWrong() {
-    $('.radio'[name = 'answer']).submit(function() {
-        event.preventDefault;
-        console.log(event);
-        $('this').on('click', function() {
-            if($(this).val() == question) {
-                $('.pop-up-correct').show();
-                currentQuestion++;
-                scoreNum++;
-                $('.scoreNum').text();
-                generateQuestion();
+    $('input[name=answer]:radio').click(function() {
+        if ($('input[name = answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
+            //answer is correct
+            scoreNum++;
+            score();
+            correctReturn();
             } else {
-                $('.pop-up-wrong').show();
-                currentQuestion++;
-                generateQuestion();
+                wrongReturn();
             }
-        })
-    })
-};*/
-function rightOrWrong() {
-    if('.radio' [name = 'answer'] == QUESTIONS[questionNumber].correctAnswer) {
-        //answer is correct
-        scoreNum++;
-        correctReturn();
-        } else {
-            wrongReturn();
-        }
-        generateQuestion++;
-        generateQuestion();
-    };
+            //generateQuestion();
+    };*/
 
 function correctReturn() {
 $(rightOrWrong).show
@@ -77,6 +87,7 @@ $(rightOrWrong).show
 </div>
 `);
 };
+
 function score() {
 scoreNum++;
 $('.scoreNum').text(Correct);

@@ -18,6 +18,7 @@ function generateQuestion() {
         $('main').prepend
         (`<div class="zhongGuoImg">
             <form>
+            <fieldset class="form-field">
             <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span>?</p>
             <label class="answerOptions">
             <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
@@ -31,25 +32,27 @@ function generateQuestion() {
             <label class="answerOptions">
             <input type="radio" value="${QUESTIONS[questionNumber].answers[3]}" name="answer" required>
             <span>${QUESTIONS[questionNumber].answers[3]}</span></label><br>
+            <input class="ansSub" type="submit" value="Submit">
+            </fieldset>
             </form>
         </div>`)
     } 
         $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);        
 };
 
-//technical assist said don't use score++ twice
-function rightOrWrong() {
-    $('main').on('click', 'input[name=answer]:radio', function() {
-       console.log('click');
+//technical assist said don't use scoreNum++ twice
+/*function rightOrWrong() {
+    $('form').on('submit', function(event) {
+        event.preventDefault;
+        console.log('click');
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
-            /*scoreNum++;*/
             score();
             correctReturn();
         }else{
             wrongReturn();
         }
     })
-};
+};*/
 
 function correctReturn() {
 $('.pop-up-correct').show
@@ -74,6 +77,19 @@ $('.pop-up-wrong').show
     <p class="pop-up-wrong-han">错误</p>
 </div>
 `)
+};
+
+function rightOrWrong() {
+    $('form').on('submit', function(event) {
+        event.preventDefault();
+        console.log('click');
+        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
+            score();
+            correctReturn();
+        }else{
+            wrongReturn();
+        }
+    })
 };
 
 function runQuiz() {

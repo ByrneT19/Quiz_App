@@ -75,7 +75,7 @@ h3 {
     margin-top: 5px;
 }
 
-form {
+.form-field {
     margin-left: 7%;
     font-size: 25px;
     font-weight: 600;
@@ -85,6 +85,15 @@ form {
     opacity: 0.75;
     width: 120%;
     padding: 20px;
+}
+
+.ansSub {
+    font-size: 25px;
+    border-color: 1px solid black;
+    font-weight: 500;
+    text-align: center;
+    background-color:  rgb(255, 187, 0);
+    border-radius: 15px;
 }
 
 .grid, .zhongGuoImg {
@@ -238,7 +247,13 @@ main {
 };
 
 @media screen and (min-width: 321px) and (max-width: 420px) {
-    
+    /*is this an approprate size breakpoint?
+    max-599px phones,
+    min-600px tablet portrait,
+    min-900px tablet landscape,
+    min-1200px desktop, 
+    and min-1800px if you plan on giving 
+    the giant-monitor people something special.*/
 };
 
 @media screen and (min-width: 421px) and (max-width: 767px) {

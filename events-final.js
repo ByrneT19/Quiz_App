@@ -4,12 +4,14 @@ function startQuiz() {
         $('h2').hide();
         $('h3').show();
         generateQuestion();
+        rightOrWrong();
         console.log(event);
     })
 };
 
 let questionNumber = 0;
 let scoreNum = 0;
+let Correct = 0;
 
 function generateQuestion() {
     if (questionNumber < QUESTIONS.length) 

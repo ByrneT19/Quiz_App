@@ -37,41 +37,12 @@ function generateQuestion() {
         $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);        
 };
 
-/*$(function () {
-    $('.showstore').hide();
-    $('.showbrand').hide();
-
-    $("input[name=user-type]:radio").click(function () {
-        if ($('input[name=user-type]:checked').val() == "Brand") {
-            $('.showstore').hide();
-            $('.showbrand').show();
-
-        } else if ($('input[name=user-type]:checked').val() == "Store") {
-            $('.showstore').show();
-            $('.showbrand').hide();
-
-        }
-    });            $(addEventListener).click('input[name=answer]:radio', function() {
-});*/
-/*function rightOrWrong() {
-    $('input[name=answer]:radio').on('click', function(e) {
-        e.preventDefault(e);
-        console.log('click');        
-        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
-            scoreNum++;
-            score();
-            correctReturn();
-        }else{
-            wrongReturn();
-        }
-    })
-};*/
-
+//technical assist said don't use score++ twice
 function rightOrWrong() {
     $('main').on('click', 'input[name=answer]:radio', function() {
        console.log('click');
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
-            scoreNum++;
+            /*scoreNum++;*/
             score();
             correctReturn();
         }else{
@@ -80,10 +51,8 @@ function rightOrWrong() {
     })
 };
 
-
-
 function correctReturn() {
-$(rightOrWrong).show
+$('.pop-up-correct').show
 (`
 <div class="pop-up-correct">
     <p>Correct!</p>
@@ -98,7 +67,7 @@ $('.scoreNum').text(Correct);
 };
 
 function wrongReturn() {
-$(rightOrWrong).show
+$('.pop-up-wrong').show
 (`
 <div class="pop-up-wrong">
     <p>Incorrect!</p>

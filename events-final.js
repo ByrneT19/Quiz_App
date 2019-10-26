@@ -14,8 +14,9 @@ let scoreNum = 0;
 let Correct = 0;
 
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length) 
+    if (questionNumber < QUESTIONS.length - 9);
     console.log(generateQuestion);
+    nextQ();
     {   
         $('main').prepend
         (`<div class="zhongGuoImg">
@@ -39,31 +40,19 @@ function generateQuestion() {
             </form>
         </div>`)
     } 
-        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);        
+        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);     
 };
 
-//technical assist said don't use scoreNum++ twice
-/*function rightOrWrong() {
-    $('form').on('submit', function(event) {
-        event.preventDefault;
-        console.log('click');
-        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
-            score();
-            correctReturn();
-        }else{
-            wrongReturn();
-        }
-    })
-};*/
-
 function correctReturn() {
-$('.pop-up-correct').show
+$('body').append('.pop-up-correct').html
 (`
 <div class="pop-up-correct">
-    <p>Correct!</p>
+    <p class="resultText">Correct!</p>
     <p class="pop-up-correct-han">不错</p>
+    <button class="nextQuestion">Great!</button>
 </div>
-`);
+`)
+.show();
 };
 
 function score() {
@@ -72,13 +61,14 @@ $('.scoreNum').text(Correct);
 };
 
 function wrongReturn() {
-$('.pop-up-wrong').show
-(`
-<div class="pop-up-wrong">
-    <p>Incorrect!</p>
-    <p class="pop-up-wrong-han">错误</p>
-</div>
-`)
+    $('body').append('.pop-up-wrong').html(`
+        <div class="pop-up-wrong">
+            <p class="resultText">Incorrect!</p>
+            <p class="pop-up-wrong-han">错误</p>
+            <button class="nextQuestion">Oh No!</button>
+        </div>
+    `)
+    .show();
 };
 
 function rightOrWrong() {
@@ -86,13 +76,23 @@ function rightOrWrong() {
         event.preventDefault();
         console.log('click');
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
+            console.log('Correct');
             score();
             correctReturn();
         }else{
+            console.log('Wrong')
             wrongReturn();
         }
     })
 };
+
+function nextQ() {
+    $('body').on('click', '.nextQuestion', function() {
+        $('.pop-up-correct').hide;
+        $('.pop-up-wrong').hide;
+        $('form').replaceWith(generateQuestion(QUESTIONS.questionNumber++));
+    })
+}
 
 function runQuiz() {
     startQuiz();

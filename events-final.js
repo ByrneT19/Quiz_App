@@ -88,9 +88,10 @@ function rightOrWrong() {
 
 function nextQ() {
     $('body').on('click', '.nextQuestion', function() {
-        $('.pop-up-correct').hide;
-        $('.pop-up-wrong').hide;
-        $('form').replaceWith(generateQuestion(QUESTIONS.questionNumber++));
+        $('.pop-up-correct').hide();
+        $('.pop-up-wrong').hide();
+        QUESTIONS.questionNumber++;
+        /*generateQuestion();*/
     })
 }
 

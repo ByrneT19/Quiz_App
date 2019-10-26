@@ -1,5 +1,6 @@
+//Where does the QUESTIONS.questionNumber has defined? I couldn't find the questionNumber key in the QUESTIONS object.//
 const QUESTIONS = [ 
-    {//1
+    questionNumber1 = {//1
         question: 'I would like to go to the airport',  
         answers: [  
             "Wǒ xiǎng yào qù huǒchē zhàn - 我想要去火车站",
@@ -12,7 +13,7 @@ const QUESTIONS = [
         alt: 'An image of a plane landing'
     },
 
-    {//2
+    questionNumber2 = {//2
         question: 'I would like to go to the train station',
         answers: [
             "Wǒ xiǎng yào qù huǒchē zhàn - 我想要去火车站",

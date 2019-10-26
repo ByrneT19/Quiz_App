@@ -92,9 +92,8 @@ function nextQ() {
         $('.pop-up-correct').hide();
         $('.pop-up-wrong').hide();
         if(questionNumber < lastQuestion) {
-        questionNumber++;
+        QUESTIONS.questionNumber++;
         generateQuestion();
-        $('form').show();
         }
     })
 }

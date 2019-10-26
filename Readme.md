@@ -24,3 +24,10 @@ answers : ['answer1', 'aws2']
 answer1: 'this'
 
 answer2 : 'this"
+
+
+
+
+function rightOrWrong() {
+    $('body').on('submit', 'form', function(event) {
+...

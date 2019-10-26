@@ -45,7 +45,7 @@ function generateQuestion() {
 };
 
 function correctReturn() {
-$('body').append('.pop-up-correct').html
+$('main').append('.pop-up-correct').html
 (`
 <div class="pop-up-correct">
     <p class="resultText">Correct!</p>
@@ -62,7 +62,7 @@ $('.scoreNum').text(Correct);
 };
 
 function wrongReturn() {
-    $('body').append('.pop-up-wrong').html(`
+    $('main').append('.pop-up-wrong').html(`
         <div class="pop-up-wrong">
             <p class="resultText">Incorrect!</p>
             <p class="pop-up-wrong-han">错误</p>
@@ -89,12 +89,21 @@ function rightOrWrong() {
 
 function nextQ() {
     $('body').on('click', '.nextQuestion', function() {
-        $('.pop-up-correct').hide();
-        $('.pop-up-wrong').hide();
+        $('.pop-up-correct').remove();
+        $('.pop-up-wrong').remove();
         if(questionNumber < lastQuestion) {
         QUESTIONS.questionNumber++;
-        generateQuestion();
+        console.log(QUESTIONS.questionNumber++);
+        $('main').prepend(generateQuestion());
+        {$('main').append(`<div class="zhongGuoImg">
+        <img class="china-img" src="" alt="">
+    </div>
+    <div class="han">
+        <p class="hanzi">学汉语</p>
+    </div>`)}
+        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
         }
+        
     })
 }
 

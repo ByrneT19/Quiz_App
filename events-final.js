@@ -9,12 +9,13 @@ function startQuiz() {
     })
 };
 
+const lastQuestion = QUESTIONS.length - 9;
 let questionNumber = 0;
 let scoreNum = 0;
 let Correct = 0;
 
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length - 9);
+    if (questionNumber < lastQuestion);
     console.log(generateQuestion);
     nextQ();
     {   
@@ -90,8 +91,11 @@ function nextQ() {
     $('body').on('click', '.nextQuestion', function() {
         $('.pop-up-correct').hide();
         $('.pop-up-wrong').hide();
-        QUESTIONS.questionNumber++;
-        /*generateQuestion();*/
+        if(questionNumber < lastQuestion) {
+        questionNumber++;
+        generateQuestion();
+        $('form').show();
+        }
     })
 }
 

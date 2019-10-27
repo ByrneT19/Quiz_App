@@ -9,13 +9,13 @@ function startQuiz() {
     })
 };
 
-const lastQuestion = QUESTIONS.length - 9;
+//const lastQuestion = QUESTIONS.length - 9;
 let questionNumber = 0;
 let scoreNum = 0;
 let Correct = 0;
 
 function generateQuestion() {
-    if (questionNumber < lastQuestion);
+    if (questionNumber < QUESTIONS.length - 9);
     console.log(generateQuestion);
     nextQ();
     {   
@@ -73,7 +73,7 @@ function wrongReturn() {
 };
 
 function rightOrWrong() {
-    $('form').on('submit', function(event) {
+    $('body').on('submit', 'form', function(event) {
         event.preventDefault();
         console.log('click');
         if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
@@ -91,8 +91,8 @@ function nextQ() {
     $('body').on('click', '.nextQuestion', function() {
         $('.pop-up-correct').remove();
         $('.pop-up-wrong').remove();
-        if(questionNumber < lastQuestion) {
-        QUESTIONS.questionNumber++;
+        if(questionNumber < QUESTIONS.length -9) {
+        questionNumber++;
         console.log(QUESTIONS.questionNumber++);
         $('main').prepend(generateQuestion());
         {$('main').append(`<div class="zhongGuoImg">

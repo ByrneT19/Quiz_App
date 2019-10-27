@@ -83,7 +83,7 @@ h3 {
     background-color: rgb(255, 187, 0);
     border-radius: 15px;
     opacity: 0.75;
-    width: 120%;
+    /*width: 60%;*/
     padding: 20px;
 }
 
@@ -149,12 +149,6 @@ main {
     margin-top: 245px;
 }
 
-.pop-up-correct-han {
-    font-size: 200px;
-    font-family: 'Zhi Mang Xing', cursive;
-    writing-mode: vertical-rl;
-}
-
 .pop-up-wrong {
     width: 400px;
     height: 500px;    
@@ -171,7 +165,7 @@ main {
     margin-top: 245px;
 }
 
-.pop-up-wrong-han {
+.pop-up-han {
     font-size: 200px;
     font-family: 'Zhi Mang Xing', cursive;
     writing-mode: vertical-rl;

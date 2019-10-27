@@ -31,3 +31,6 @@ answer2 : 'this"
 function rightOrWrong() {
     $('body').on('submit', 'form', function(event) {
 ...
+
+
+The problem was rightOrWrong was called twice in the runQuiz, and startQuiz

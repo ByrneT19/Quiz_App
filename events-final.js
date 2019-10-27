@@ -1,3 +1,4 @@
+//begins quiz
 function startQuiz() {
     $('#quiz-start').click('#quiz-start', function(event) {
         $('#quiz-start').hide();
@@ -5,25 +6,25 @@ function startQuiz() {
         $('h3').show();
         generateQuestion();
         rightOrWrong();
+        result();
         console.log(event);
     })
 };
 
-//const lastQuestion = QUESTIONS.length - 9;
 let questionNumber = 0;
 let scoreNum = 0;
 let Correct = 0;
 
+//generates question, answers and related image
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length - 9);
-    console.log(generateQuestion);
-    nextQ();
+    if (questionNumber < QUESTIONS.length);
+    console.log(questionNumber);
     {   
         $('main').prepend
         (`<div class="zhongGuoImg">
             <form>
             <fieldset class="form-field">
-            <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span>?</p>
+            <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span></p>
             <label class="answerOptions">
             <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
             <span>${QUESTIONS[questionNumber].answers[0]}</span></label><br>
@@ -44,34 +45,43 @@ function generateQuestion() {
         $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);     
 };
 
+/*function questionInc() {
+    questNum++;
+    $('.questNum').append(`${questNum++}`)
+}*/
+
+//creates pop-up box for correct answer
 function correctReturn() {
 $('main').append('.pop-up-correct').html
 (`
 <div class="pop-up-correct">
     <p class="resultText">Correct!</p>
-    <p class="pop-up-correct-han">不错</p>
+    <p class="pop-up-han">不错</p>
     <button class="nextQuestion">Great!</button>
 </div>
 `)
 .show();
 };
 
+//updates score
 function score() {
 scoreNum++;
-$('.scoreNum').text(Correct);
+$('.scoreNum').text(`Correct:  ${scoreNum ++}`);
 };
 
+//creates pop-up box for wrong answer
 function wrongReturn() {
     $('main').append('.pop-up-wrong').html(`
         <div class="pop-up-wrong">
             <p class="resultText">Incorrect!</p>
-            <p class="pop-up-wrong-han">错误</p>
+            <p class="pop-up-han">错误</p>
             <button class="nextQuestion">Oh No!</button>
         </div>
     `)
     .show();
 };
 
+//checks if answer is right or wrong
 function rightOrWrong() {
     $('body').on('submit', 'form', function(event) {
         event.preventDefault();
@@ -87,29 +97,84 @@ function rightOrWrong() {
     })
 };
 
+//loads next question
 function nextQ() {
-    $('body').on('click', '.nextQuestion', function() {
+    $('body').on('click', '.nextQuestion', function() { //should it be body or main?
         $('.pop-up-correct').remove();
         $('.pop-up-wrong').remove();
-        if(questionNumber < QUESTIONS.length -9) {
+        if(questionNumber < QUESTIONS.length) {
         questionNumber++;
-        console.log(QUESTIONS.questionNumber++);
-        $('main').prepend(generateQuestion());
-        {$('main').append(`<div class="zhongGuoImg">
-        <img class="china-img" src="" alt="">
-    </div>
-    <div class="han">
-        <p class="hanzi">学汉语</p>
-    </div>`)}
-        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
+        //questionInc()
+        generateQuestion();
+        {$('main').append(
+            `<div class="zhongGuoImg">
+                <img class="china-img" src="" alt="">
+            </div>
+            <div class="han">
+                <p class="hanzi">学汉语</p>
+            </div>`)}
+                $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
         }
         
     })
 }
 
+//pop-ups for result function
+function exScore() {
+    $('body').append('.excellent').html(`
+    <div class="excellent">
+        <p class="resultText">Excellent!</p>
+        <p class="pop-up-han">太好了</p>
+        <button id="restart">Restart</button>
+    </div>
+    `)
+    .show();
+};
+
+function midScore() {
+    $('body').append('.ok').html(`
+    <div class=".ok">
+        <p class="resultText">So-So</p>
+        <p class="pop-up-han">马马虎虎</p>
+        <button id="restart">Restart</button>
+    </div>
+    `)
+    .show();
+};
+
+function lowScore() {
+    $('body').append('.bad').html(`
+    <div class=".bad">
+        <p class="resultText">Make Effort!</p>
+        <p class="pop-up-han">加油</p>
+        <button id="restart">Restart</button>
+    </div>
+    `)
+    .show();
+}
+
+//tells user their result
+function result() {
+    for(questionNumber = 0; questionNumber >= QUESTIONS.length; questionNumber++) {
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
+        return (scorePerCent >= 70) ? exScore():
+                (scorePerCent >=40) ? midScore(): lowScore();
+    }
+};
+
+function goAgain() {
+    $('body').on('click', '#restart', function() {
+        $('.excellent').remove();
+        $('.ok').remove();
+        $('.bad').remove();
+        startQuiz();
+    })
+};
+
 function runQuiz() {
     startQuiz();
-    rightOrWrong();
+    nextQ();
+    goAgain();
 };
 
 $(runQuiz);

@@ -6,18 +6,18 @@ function startQuiz() {
         $('h3').show();
         generateQuestion();
         rightOrWrong();
-        result();
         console.log(event);
     })
 };
 
 let questionNumber = 0;
-let scoreNum = 0;
+let scoreNum = +1;
 let Correct = 0;
+//let scorePerCent = 0;
 
 //generates question, answers and related image
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length);
+    if (questionNumber < QUESTIONS.length - 9);
     console.log(questionNumber);
     {   
         $('main').prepend
@@ -45,10 +45,13 @@ function generateQuestion() {
         $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);     
 };
 
-/*function questionInc() {
-    questNum++;
-    $('.questNum').append(`${questNum++}`)
-}*/
+function questionInc() {
+    $('.nextQuestion').on('click', function() {
+        $('h3').append(`
+        <span class="questionIncrement>${questionNumber++}/10</span>
+        `)
+    })
+};
 
 //creates pop-up box for correct answer
 function correctReturn() {
@@ -56,7 +59,9 @@ $('main').append('.pop-up-correct').html
 (`
 <div class="pop-up-correct">
     <p class="resultText">Correct!</p>
-    <p class="pop-up-han">不错</p>
+    <!--div class="han-pos"-->
+        <p class="pop-up-han">不错</p>
+    <!--/div-->
     <button class="nextQuestion">Great!</button>
 </div>
 `)
@@ -65,9 +70,13 @@ $('main').append('.pop-up-correct').html
 
 //updates score
 function score() {
-scoreNum++;
-$('.scoreNum').text(`Correct:  ${scoreNum ++}`);
+$('.scoreNum').text(`Correct: ${scoreNum ++}`);
+console.log(scoreNum);
 };
+
+function score() {
+
+}
 
 //creates pop-up box for wrong answer
 function wrongReturn() {
@@ -102,9 +111,8 @@ function nextQ() {
     $('body').on('click', '.nextQuestion', function() { //should it be body or main?
         $('.pop-up-correct').remove();
         $('.pop-up-wrong').remove();
-        if(questionNumber < QUESTIONS.length) {
+        if(questionNumber < QUESTIONS.length - 9) {
         questionNumber++;
-        //questionInc()
         generateQuestion();
         {$('main').append(
             `<div class="zhongGuoImg">
@@ -114,6 +122,9 @@ function nextQ() {
                 <p class="hanzi">学汉语</p>
             </div>`)}
                 $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
+        } else {
+            result();
+            goAgain();
         }
         
     })
@@ -155,26 +166,30 @@ function lowScore() {
 
 //tells user their result
 function result() {
-    for(questionNumber = 0; questionNumber >= QUESTIONS.length; questionNumber++) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
+    if(questionNumber === QUESTIONS.length - 9) {
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 9);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }
+    console.log(scorePerCent);
 };
 
+//restarts quiz
 function goAgain() {
     $('body').on('click', '#restart', function() {
         $('.excellent').remove();
         $('.ok').remove();
         $('.bad').remove();
         startQuiz();
+        console.log('#restart');
     })
 };
 
 function runQuiz() {
     startQuiz();
     nextQ();
-    goAgain();
+    questionInc();
+    result();
 };
 
 $(runQuiz);

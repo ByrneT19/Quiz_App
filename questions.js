@@ -86,7 +86,7 @@ const QUESTIONS = [
             "Wǒ jiù zài nǎ'er? - 我就在哪儿?",
             "Nǐ zhīdào wǒ zài nǎlǐ kěyǐ mǎi dào jìniànpǐn ma? - 你知道我在哪里可以买到纪念品吗？"
         ],
-        correctAnswer: "Wǒ kěyǐ mǎi huǒchē piào zài nǎ'er? - 我可以买火车票在哪儿?",
+        correctAnswer: "Wǒ jiù zài nǎ'er? - 我就在哪儿?",
         questionImage: 'lost.jpeg',
         alt: 'An image of a person holding a compass'
     },

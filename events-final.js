@@ -17,11 +17,10 @@ let Correct = 0;
 
 //generates question, answers and related image
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length - 9);
+    if (questionNumber < QUESTIONS.length - 8);
     console.log(questionNumber);
     {   
-        $('.zhongGuoImg').before
-        (`<div class="grid">
+        $('.grid').html(`
             <form>
             <fieldset class="form-field">
             <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span></p>
@@ -40,18 +39,18 @@ function generateQuestion() {
             <input class="ansSub" type="submit" value="Submit">
             </fieldset>
             </form>
-        </div>`)
+        `)
     } 
         $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);     
 };
 
-/*function questionInc() {
+function questionInc() {
     $('.nextQuestion').on('click', function() {
         $('h3').append(`
         <span class="questionIncrement>${questionNumber++}/10</span>
         `)
     })
-};*/
+};
 
 //creates pop-up box for correct answer
 function correctReturn() {
@@ -73,6 +72,10 @@ function score() {
 $('.scoreNum').text(`Correct: ${scoreNum ++}`);
 console.log(scoreNum);
 };
+
+function score() {
+
+}
 
 //creates pop-up box for wrong answer
 function wrongReturn() {
@@ -118,10 +121,10 @@ function nextQ() {
                 <p class="hanzi">学汉语</p>
             </div>`)}
                 $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
-        } /*else {
+        } else {
             result();
             goAgain();
-        }*/
+        }
         
     })
 }
@@ -161,7 +164,7 @@ function lowScore() {
 }
 
 //tells user their result
-/*function result() {
+function result() {
     if(questionNumber === QUESTIONS.length - 9) {
         const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 9);
         return (scorePerCent >= 70) ? exScore():
@@ -179,13 +182,16 @@ function goAgain() {
         startQuiz();
         console.log('#restart');
     })
-};*/
+};
 
 function runQuiz() {
     startQuiz();
     nextQ();
     //questionInc();
-    //result();
+    result();
 };
 
 $(runQuiz);
+
+
+

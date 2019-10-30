@@ -7,6 +7,7 @@ function startQuiz() {
         $('.questNum').text(1);
         $('h2').hide();
         $('h3').show();
+        $('.grid', '.zhongGuoImg').show();
         generateQuestion();
         rightOrWrong();
         console.log(event);
@@ -76,7 +77,7 @@ function rightOrWrong() {
     $('form').on('submit', function(event) {
         event.preventDefault();
         console.log('click');
-        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
+        if ($('input[name=answer]:checked').val() === QUESTIONS[questionNumber].correctAnswer) {
             console.log('Correct');
             scoreInc();
             correctReturn();

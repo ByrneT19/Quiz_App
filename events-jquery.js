@@ -4,11 +4,12 @@ let scoreNum = 0;
 function startQuiz() {
     $('#quiz-start').on('click', function(event) {
         $('#quiz-start').remove();
-        $('.questNum').text(1);
+        $('.questionNumber').text(1);
         $('h2').hide();
         $('h3').show();
         $('.grid', '.zhongGuoImg').show();
-        generateQuestion();
+        //generateQuestion();
+        renderQuestion();
         rightOrWrong();
         console.log(event);
     })
@@ -53,13 +54,14 @@ function generateImage() {
 }
 
 function renderQuestion () {
-    $('.grid').html(generateQuestion(), generateImage());
+    $('.grid').html(generateQuestion());
+    $('.zhongGuiImg').html(generateImage());
   }
 
 //increments question number
 function questionInc() {
-    questNum++;
-    $('.questNum').text(questNum+1);
+    questionNumber++;
+    $('.questionNumber').text(questionNumber+1);
 };
 
 function score() {
@@ -77,7 +79,7 @@ function rightOrWrong() {
     $('form').on('submit', function(event) {
         event.preventDefault();
         console.log('click');
-        if ($('input[name=answer]:checked').val() === QUESTIONS[questionNumber].correctAnswer) {
+        if ($('input[name=answer]:checked').val() == QUESTIONS[questionNumber].correctAnswer) {
             console.log('Correct');
             scoreInc();
             correctReturn();
@@ -120,18 +122,9 @@ function nextQ() {
     $('main').on('click', '.nextQuestion', function() {
         questionInc();
         renderQuestion();
-        rightOrWrong();
+        //rightOrWrong();
     })
 }
-
-//progresses quiz
-function renderNextQuestion () {
-    $('main').on('click', '.nextButton', function () {
-      questionInc();
-      renderQuestion();
-      rightOrWrong();
-    });
-  }
 
 //pop-ups for result function
 function exScore() {
@@ -190,9 +183,9 @@ function goAgain() {
 
 function runQuiz() {
     startQuiz();
-    renderQuestion();
+    //renderQuestion();
     rightOrWrong();
-    renderNextQuestion();
+    nextQ();
 };
 
 $(runQuiz);

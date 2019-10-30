@@ -111,7 +111,7 @@ h3 {
 
 .grid, .zhongGuoImg {
     float: left;
-    display: none;
+    /*display: none;*/
 }
 
 img {

@@ -120,9 +120,10 @@ function wrongReturn() {
 //next question
 function nextQ() {
     $('main').on('click', '.nextQuestion', function() {
+        $('.pop-up-correct').hide();
+        $('.pop-up-wrong').hide();
         questionInc();
         renderQuestion();
-        //rightOrWrong();
     })
 }
 

@@ -1,4 +1,3 @@
-//begins quiz
 function startQuiz() {
     $('#quiz-start').click('#quiz-start', function(event) {
         $('#quiz-start').hide();
@@ -11,17 +10,14 @@ function startQuiz() {
 };
 
 let questionNumber = 0;
-let scoreNum = +1;
 let Correct = 0;
-//let scorePerCent = 0;
 
 //generates question, answers and related image
 function generateQuestion() {
-    if (questionNumber < QUESTIONS.length - 8);
-    console.log(questionNumber);
-    {   
-        $('.grid').html(`
-            <form>
+    if (questionNumber < QUESTIONS.length);
+    console.log(questionNumber);{
+    $('.grid').html(`
+        <form>
             <fieldset class="form-field">
             <p class="Q-prompt">How would you say: <span>${QUESTIONS[questionNumber].question}</span></p>
             <label class="answerOptions">
@@ -38,44 +34,30 @@ function generateQuestion() {
             <span>${QUESTIONS[questionNumber].answers[3]}</span></label><br>
             <input class="ansSub" type="submit" value="Submit">
             </fieldset>
-            </form>
-        `)
-    } 
-        $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);     
+        </form>`) 
+    }
+    {$('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);}
+
 };
 
-function questionInc() {
-    $('.nextQuestion').on('click', function() {
-        $('h3').append(`
-        <span class="questionIncrement>${questionNumber++}/10</span>
-        `)
-    })
-};
-
+function renderQuestion () {
+    $('.grid').html(generateQuestion());
+  }
+  
 //creates pop-up box for correct answer
 function correctReturn() {
-$('main').append('.pop-up-correct').html
-(`
-<div class="pop-up-correct">
-    <p class="resultText">Correct!</p>
-    <!--div class="han-pos"-->
-        <p class="pop-up-han">不错</p>
-    <!--/div-->
-    <button class="nextQuestion">Great!</button>
-</div>
-`)
-.show();
-};
-
-//updates score
-function score() {
-$('.scoreNum').text(`Correct: ${scoreNum ++}`);
-console.log(scoreNum);
-};
-
-function score() {
-
-}
+    $('main').append('.pop-up-correct').html
+    (`
+    <div class="pop-up-correct">
+        <p class="resultText">Correct!</p>
+        <!--div class="han-pos"-->
+            <p class="pop-up-han">不错</p>
+        <!--/div-->
+        <button class="nextQuestion">Great!</button>
+    </div>
+    `)
+    .show();
+    };
 
 //creates pop-up box for wrong answer
 function wrongReturn() {
@@ -105,29 +87,12 @@ function rightOrWrong() {
     })
 };
 
-//loads next question
-function nextQ() {
-    $('body').on('click', '.nextQuestion', function() { //should it be body or main?
-        $('.pop-up-correct').remove();
-        $('.pop-up-wrong').remove();
-        if(questionNumber < QUESTIONS.length - 9) {
-        questionNumber++;
-        generateQuestion();
-        {$('main').append(
-            `<div class="zhongGuoImg">
-                <img class="china-img" src="" alt="">
-            </div>
-            <div class="han">
-                <p class="hanzi">学汉语</p>
-            </div>`)}
-                $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
-        } else {
-            result();
-            goAgain();
-        }
-        
-    })
-}
+//generates next question
+function nextQ () {
+    $('main').on('click', '.nextQuestion', function () {
+      renderQuestion();
+    });
+  }
 
 //pop-ups for result function
 function exScore() {
@@ -165,8 +130,8 @@ function lowScore() {
 
 //tells user their result
 function result() {
-    if(questionNumber === QUESTIONS.length - 9) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 9);
+    if(questionNumber === QUESTIONS.length - 8) {
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 8);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }
@@ -186,12 +151,9 @@ function goAgain() {
 
 function runQuiz() {
     startQuiz();
+    renderQuestion();
     nextQ();
-    //questionInc();
     result();
 };
 
 $(runQuiz);
-
-
-

@@ -18,7 +18,7 @@ function startQuiz() {
 
 //generate question 
 function generateQuestion () {
-    if (questionNumber < QUESTIONS.length  -8) {
+    if (questionNumber < QUESTIONS.length) {
       return `<div>
       <form >
       <fieldset class="form-field">
@@ -57,7 +57,7 @@ function generateImage() {
 
 function renderQuestion () {
     $('.grid').html(generateQuestion());
-    $('.zhongGuoImg').html(generateImage());
+    $('.zhongGuiImg').html(generateImage());
   }
 
 //increments question number
@@ -137,10 +137,10 @@ function nextQ() {
 
 //pop-ups for result function
 function exScore() {
-    $('body').append('.excellent').html(`
+    $('body').append(`
     <div class="excellent">
         <p class="resultText">Excellent!</p>
-        <p class="pop-up-han">太好了</p>
+        <p class="pop-up-han">太好<br>了</p>
         <button id="restart">Restart</button>
     </div>
     `)
@@ -148,10 +148,10 @@ function exScore() {
 };
 
 function midScore() {
-    $('body').append('.ok').html(`
-    <div class=".ok">
+    $('body').append(`
+    <div class="ok">
         <p class="resultText">So-So</p>
-        <p class="pop-up-han">马马虎虎</p>
+        <p class="pop-up-han">马马<br>虎虎</p>
         <button id="restart">Restart</button>
     </div>
     `)
@@ -159,8 +159,8 @@ function midScore() {
 };
 
 function lowScore() {
-    $('body').append('.bad').html(`
-    <div class=".bad">
+    $('body').append(`
+    <div class="bad">
         <p class="resultText">Make Effort!</p>
         <p class="pop-up-han">加油</p>
         <button id="restart">Restart</button>
@@ -171,26 +171,13 @@ function lowScore() {
 
 //tells user their result
 function result() {
-    if(questionNumber === QUESTIONS.length  -8) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length  -8);
+    if(questionNumber === QUESTIONS.length) {
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }
     console.log(scorePerCent);
 };
-
-//restarts quiz
-/*function goAgain() {
-    $('main').on('click', '#restart', function() {
-        $('.excellent').remove();
-        $('.ok').remove();
-        $('.bad').remove();
-        runQuiz();
-        $('.questionNumber').text(0);
-        renderQuestion();
-        console.log('#restart');
-    })
-};*/
 
 //restarts quiz
 function goAgain() {

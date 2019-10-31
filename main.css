@@ -98,6 +98,7 @@ h3 {
 }
 
 .ansSub {
+    width: 12%;
     font-size: 25px;
     border-color: 1px solid black;
     font-weight: bold;
@@ -105,6 +106,7 @@ h3 {
     background-color:  rgb(255, 187, 0);
     border-radius: 15px;
     margin-top: 25px;
+    padding: 1px 6px;
 }
 
 .ansSub:hover {
@@ -131,7 +133,7 @@ img {
     float: right;
     margin-right: 0%;
     margin-left: 0px;
-    margin-top: -35px;
+    margin-top: -45px;
     text-align: center;
     font-size: 140px;
     letter-spacing: 50px;
@@ -181,20 +183,18 @@ main {
 .pop-up-han {
     font-size: 200px;
     font-family: 'Zhi Mang Xing', cursive;
-    writing-mode: vertical-rl;
-    text-align: center;
+    writing-mode: vertical-lr;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
 }
-
-/*.han-pos {
-    text-align: center;
-}*/
 
 .resultText {
     margin-top: 25px;
+    margin-bottom: 0px;
 }
 
-.nextQuestion {
-    width: 12%; 
+.nextQuestion { 
     height: 50px;
     margin: 0 auto;
     font-size: 20px;
@@ -204,6 +204,7 @@ main {
     opacity: 0.75;
     border: 1px solid black;
     text-align: center;
+    padding: 1px 6px;
 }
 
 .nextQuestion:hover {
@@ -276,7 +277,7 @@ main {
     opacity: 1;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 566px) {
     body {
         display: flex;
         flex-direction: column;
@@ -353,6 +354,13 @@ main {
     body {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .form-field {
+        width: 450px;
+        height: 300px;
+        font-size: 30px;
     }
 
     .hanzi {
@@ -362,7 +370,8 @@ main {
     }
 
     img {
-        /*display: none;*/
+        width: 450px;
+        height: 200px;
     }
 };
 
@@ -370,20 +379,23 @@ main {
     body {
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
     }
 };
 
 @media screen and (min-width: 1200px) {
-    
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 };
 
 @media screen and (min-width: 1800px) {
 
 };
 
-@media screen and (min-width: 1025px) {
 
-};
 
 
 

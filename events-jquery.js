@@ -8,10 +8,10 @@ function startQuiz() {
         $('h2').hide();
         $('h3').show();
         $('.grid', '.zhongGuoImg').show();
-        //generateQuestion();
+        generateQuestion();
         renderQuestion();
-        rightOrWrong();
         nextQ();
+        rightOrWrong();
         console.log(event);
     })
 }
@@ -47,6 +47,7 @@ function generateQuestion () {
       result();
       goAgain();
     }
+
   };
   
 function generateImage() {  
@@ -88,12 +89,13 @@ function rightOrWrong() {
             console.log('Wrong')
             wrongReturn();
         }
+    
     })
 };
 
 //creates pop-up box for correct answer
 function correctReturn() {
-    $('main').append('.pop-up-correct').html
+    $('.grid').append('.pop-up-correct').html
     (`
     <div class="pop-up-correct">
         <p class="resultText">Correct!</p>
@@ -108,7 +110,7 @@ function correctReturn() {
 
 //creates pop-up box for wrong answer
 function wrongReturn() {
-    $('main').append('.pop-up-wrong').html(`
+    $('.grid').append('.pop-up-wrong').html(`
         <div class="pop-up-wrong">
             <p class="resultText">Incorrect!</p>
             <p class="pop-up-han">错误</p>
@@ -120,12 +122,14 @@ function wrongReturn() {
 
 //next question
 function nextQ() {
-    $('main').on('click', '.nextQuestion', function() {
+    $('.grid').on('click', '.nextQuestion', function() {
         $('.pop-up-correct').hide();
         $('.pop-up-wrong').hide();
         questionInc();
-        //renderQuestion();
+        renderQuestion();
+        rightOrWrong();
     })
+    
 }
 
 //pop-ups for result function
@@ -165,7 +169,7 @@ function lowScore() {
 //tells user their result
 function result() {
     if(questionNumber === QUESTIONS.length - 8) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 8);
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }
@@ -185,9 +189,8 @@ function goAgain() {
 
 function runQuiz() {
     startQuiz();
-    //renderQuestion();
     rightOrWrong();
-    //nextQ();
+    nextQ();
 };
 
 $(runQuiz);

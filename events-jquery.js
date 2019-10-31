@@ -5,12 +5,12 @@ function startQuiz() {
     $('#quiz-start').on('click', function(event) {
         $('#quiz-start').remove();
         $('.questionNumber').text(1);
+        $('.scoreNum').text(0);
         $('h2').hide();
         $('h3').show();
         $('.grid', '.zhongGuoImg').show();
         generateQuestion();
         renderQuestion();
-        nextQ();
         rightOrWrong();
         console.log(event);
     })
@@ -18,26 +18,26 @@ function startQuiz() {
 
 //generate question 
 function generateQuestion () {
-    if (questionNumber < QUESTIONS.length) {
+    if (questionNumber < QUESTIONS.length - 8) {
       return `<div>
       <form >
       <fieldset class="form-field">
       <p>${QUESTIONS[questionNumber].question}</p>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
-      <span>${QUESTIONS[questionNumber].answers[0]}</span>
+      <span>${QUESTIONS[questionNumber].answers[0]}</span><br>
       </label>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[1]}" name="answer" required>
-      <span>${QUESTIONS[questionNumber].answers[1]}</span>
+      <span>${QUESTIONS[questionNumber].answers[1]}</span><br>
       </label>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[2]}" name="answer" required>
-      <span>${QUESTIONS[questionNumber].answers[2]}</span>
+      <span>${QUESTIONS[questionNumber].answers[2]}</span><br>
       </label>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[3]}" name="answer" required>
-      <span>${QUESTIONS[questionNumber].answers[3]}</span>
+      <span>${QUESTIONS[questionNumber].answers[3]}</span><br>
       </label>
       <button type="submit" class="ansSub">Submit</button>
       </fieldset>
@@ -49,9 +49,9 @@ function generateQuestion () {
     }
 
   };
-  
+
+//generates question image
 function generateImage() {  
-    generateQuestion();
     $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
 }
 
@@ -73,8 +73,8 @@ function score() {
 //increments score 
 function scoreInc() {
     score();
-    $('.scoreNum').text(score);
-  }
+    $('.scoreNum').text(scoreNum+1);
+  };
 
 //checks if answer is right or wrong
 function rightOrWrong() {
@@ -85,9 +85,11 @@ function rightOrWrong() {
             console.log('Correct');
             scoreInc();
             correctReturn();
+            $('.zhongGuoImg').hide();
         }else{
             console.log('Wrong')
             wrongReturn();
+            $('.zhongGuoImg').hide();
         }
     
     })
@@ -128,6 +130,7 @@ function nextQ() {
         questionInc();
         renderQuestion();
         rightOrWrong();
+        $('.zhongGuoImg').show();
     })
     
 }
@@ -169,7 +172,7 @@ function lowScore() {
 //tells user their result
 function result() {
     if(questionNumber === QUESTIONS.length - 8) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length - 8);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }
@@ -182,6 +185,9 @@ function goAgain() {
         $('.excellent').remove();
         $('.ok').remove();
         $('.bad').remove();
+        $('.questionNumber').text(1);
+        $('.scoreNum').text(0);
+        runQuiz();
         startQuiz();
         console.log('#restart');
     })

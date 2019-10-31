@@ -86,13 +86,14 @@ h3 {
 
 .form-field {
     margin-left: 7%;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     background-color: rgb(255, 187, 0);
     border-radius: 15px;
     opacity: 0.75;
-    /*width: 60%;*/
+    width: 800px;
+    height: 500px;
     padding: 20px;
 }
 
@@ -103,6 +104,7 @@ h3 {
     text-align: center;
     background-color:  rgb(255, 187, 0);
     border-radius: 15px;
+    margin-top: 25px;
 }
 
 .ansSub:hover {
@@ -118,7 +120,7 @@ img {
     width: 700px;
     height: 500px;
     margin-right: 1%;
-    margin-left: 310px;
+    margin-left: 150px;
     border: 5px solid rgb(255, 187, 0);  
     border-radius: 3px; 
 }
@@ -180,6 +182,7 @@ main {
     font-size: 200px;
     font-family: 'Zhi Mang Xing', cursive;
     writing-mode: vertical-rl;
+    text-align: center;
 }
 
 /*.han-pos {
@@ -209,49 +212,51 @@ main {
 
 .excellent {
     width: 400px;
-    height: 500px;
-    font-size: 200px;
-    text-align: center;
+    height: 500px;    
+    text-align: center;   
     letter-spacing: 1px;
-    writing-mode: vertical-lr;
     background-color: rgb(222, 41, 16);
+    font-size: 25px;
+    font-weight: bold;
     position: relative;
     border-radius: 20px;
     opacity: 0.80;
-    margin-top: 245px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 125px;
 }
 
 .ok {
     width: 400px;
-    height: 500px;
-    font-size: 200px;
+    height: 500px;    
+    text-align: center;   
     letter-spacing: 1px;
-    text-align: center;
-    writing-mode: vertical-lr;
     background-color: rgb(255, 187, 0);
+    font-size: 25px;
+    font-weight: bold;
     position: relative;
     border-radius: 20px;
     opacity: 0.80;
-    margin-top: 245px;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
 }
 
 .bad {
     width: 400px;
-    height: 500px;
-    font-size: 200px;
+    height: 500px;    
+    text-align: center;   
     letter-spacing: 1px;
-    text-align: center;
-    writing-mode: vertical-lr;
     background-color: black;
     color: white;
+    font-size: 25px;
+    font-weight: bold;
     position: relative;
     border-radius: 20px;
     opacity: 0.80;
-    margin-top: 245px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
 }
 
 #restart {
@@ -267,20 +272,24 @@ main {
     text-align: center;
 }
 
+#restart:hover {
+    opacity: 1;
+}
+
 @media screen and (max-width: 599px) {
     body {
-        /*display: flex;
-        flex-direction: column;
-        justify-content: flex-start;*/
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    main {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px;
+        height: 100%;
+    }
+
+    main {
+        margin-top: 25px;
     }
 
     h1, h2, h3 {
@@ -290,8 +299,10 @@ main {
     }
 
     h3 {
-        /*display: none;*/
-        margin-left: 4px;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 10px;
     }
 
     #quiz-start {
@@ -300,10 +311,10 @@ main {
     }
     
     .form-field {
-        /*display: flex;
-        flex-direction: column;
-        justify-content: flex-start; */   
-        font-size: 10px;
+        width: 280px;
+        height: 300px;
+        font-size: 15px;
+        padding: 5px;
     }
 
     .Q-prompt {
@@ -312,14 +323,22 @@ main {
     }
 
     .zhongGuoImg {
-        /*display: none;*/
+        display: none;
     }
 
     .hanzi {
         font-size: 50px;
         writing-mode: horizontal-tb;
         text-align: center;
-        bottom: 2px;
+        /*margin-top: 20%;
+        margin-left: 0px;
+        margin-right: 0px;*/
+    }
+    
+    .han {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
     }
 };
 

@@ -60,7 +60,7 @@ h3 {
 }
 
 .scoreNum {
-    display: none;
+    /*display: none;*/
     width: 8%; 
     height: 27px;
     margin: 5px auto;

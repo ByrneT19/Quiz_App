@@ -11,6 +11,7 @@ function startQuiz() {
         //generateQuestion();
         renderQuestion();
         rightOrWrong();
+        nextQ();
         console.log(event);
     })
 }
@@ -123,7 +124,7 @@ function nextQ() {
         $('.pop-up-correct').hide();
         $('.pop-up-wrong').hide();
         questionInc();
-        renderQuestion();
+        //renderQuestion();
     })
 }
 
@@ -186,7 +187,7 @@ function runQuiz() {
     startQuiz();
     //renderQuestion();
     rightOrWrong();
-    nextQ();
+    //nextQ();
 };
 
 $(runQuiz);

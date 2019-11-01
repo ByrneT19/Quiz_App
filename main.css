@@ -333,11 +333,11 @@ main {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        align-self: flex-end;
+        margin-top: 65%;
     }
 };
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: /*600*/567px) {
     /*is this an approprate size breakpoint?
     max-599px phones,
     min-600px tablet portrait,
@@ -361,6 +361,9 @@ main {
         font-size: 50px;
         writing-mode: horizontal-tb;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 65%;
     }
 
     img {

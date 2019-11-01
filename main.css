@@ -278,7 +278,7 @@ main {
 }
 
 /*tablets*/
-@media screen and  (max-width: 1199px) {
+@media screen and (min-width: 567px) and (max-width: 1199px) {
     main {
         display: flex;
         flex-direction: column;
@@ -293,10 +293,15 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 75%;
+        width: 90%;
         height: 300px;
-        font-size: 25px;
+        font-size: 20px;
         float: left;
+        padding: 2px;
+    }
+
+    .ansSub {
+        font-size: 20px;
     }
 
     .hanzi {
@@ -309,7 +314,7 @@ main {
     }
 
     img {
-        width: 75%;
+        width: 90%;
         height: 300px;
         margin-top: 10px;
         margin-left: 7%;
@@ -330,12 +335,10 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        margin-top: 25px;
     }
 
     h1, h2, h3 {
         font-size: 30px;
-        display: block;
         text-align: center;
     }
 
@@ -352,10 +355,10 @@ main {
     }
     
     .form-field {
-        width: 280px;
+        width: 90%;
         height: 300px;
-        font-size: 15px;
-        padding: 5px;
+        font-size: 50px;
+        padding: 1px;
     }
 
     .Q-prompt {
@@ -363,7 +366,7 @@ main {
         padding-top: 1px;
     }
 
-    .zhongGuoImg {
+    img {
         display: none;
     }
 

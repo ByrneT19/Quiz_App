@@ -277,6 +277,7 @@ main {
     opacity: 1;
 }
 
+/*phone width*/
 @media screen and (max-width: 566px) {
     body {
         background-position: center;
@@ -337,21 +338,17 @@ main {
     }
 };
 
-@media screen and (min-width: /*600*/567px) {
-    /*is this an approprate size breakpoint?
-    max-599px phones,
-    min-600px tablet portrait,
-    min-900px tablet landscape,
-    min-1200px desktop, 
-    and min-1800px if you plan on giving 
-    the giant-monitor people something special.*/
+/*tablets*/
+@media screen and  (max-width: 1199px) {
     main {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
 
-    .form-field {
+    .form-field, .zhongGuoImg {
+        display: flex;
+        flex-direction: column;
         width: 450px;
         height: 300px;
         font-size: 30px;
@@ -372,25 +369,6 @@ main {
     }
 };
 
-@media screen and (min-width: 900px) {
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-};
-
-@media screen and (min-width: 1200px) {
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-};
-
-@media screen and (min-width: 1800px) {
-
-};
 
 /*glitch at 881px*/
 

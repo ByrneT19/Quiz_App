@@ -5,10 +5,11 @@
 body {
     font-family: 'Encode Sans Condensed', sans-serif;
     background-image: url(images/temple-of-heaven.jpg);
-    height: 100%; 
+    height: auto; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -21,14 +22,15 @@ h1, h2, h3 {
     background-color: rgb(255, 187, 0);
     border-radius: 20px;
     padding: 0px 8px;
+    display: inline-block;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 30px;
 }
 
 h2 {
-    font-size: 90px;
+    font-size: 30px;
 }
 
  h3 {
@@ -48,7 +50,7 @@ h2 {
 #quiz-start {
     display: block;
     width: 12%; 
-    height: 50px;
+    min-width: 100px;
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
@@ -84,14 +86,13 @@ h2 {
 
 .form-field {
     margin-left: 7%;
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
     background-color: rgb(255, 187, 0);
     border-radius: 15px;
     opacity: 0.75;
-    width: 800px;
-    height: 500px;
+    max-width: 800px;
     padding: 20px;
 }
 
@@ -116,6 +117,10 @@ h2 {
     /*display: none;*/
 }
 
+.zhongGuoImg {
+    display: none;
+}
+
 img {
     width: 700px;
     height: 500px;
@@ -126,14 +131,17 @@ img {
 }
 
 .hanzi {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    float: right;
+    /* writing-mode: vertical-rl; */
+    /*text-orientation: upright;*/
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     margin-right: 0%;
     margin-left: 0px;
     margin-top: -45px;
     text-align: center;
-    font-size: 140px;
+    font-size: 30px;
     letter-spacing: 50px;
     font-family: 'Zhi Mang Xing', cursive;
     font-weight: 800;
@@ -143,6 +151,9 @@ img {
 
 main {
     margin-top: 70px;
+    padding-bottom: 100px;
+    overflow: auto;
+    display: block;
 }
 
 .pop-up-correct {
@@ -275,7 +286,7 @@ main {
     opacity: 1;
 }
 
-/*tablets*/
+/*tablets
 @media screen and (min-width: 600px) and (max-width: 1199px) {
     main {
         display: flex;
@@ -321,8 +332,8 @@ main {
     }
 };
 
-/*phone width*/
-@media screen and (max-width: /*566*/599px) {
+phone width
+@media screen and (max-width: 566 599px) {
     body {
         background-position: center;
         background-repeat: no-repeat;
@@ -378,7 +389,7 @@ main {
         margin-right: auto;
         margin-top: 65%;
     }
-};
+};*/
 
 
 /*glitch at 881px*/

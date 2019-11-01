@@ -279,9 +279,6 @@ main {
 
 @media screen and (max-width: 566px) {
     body {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -290,6 +287,9 @@ main {
     }
 
     main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         margin-top: 25px;
     }
 
@@ -331,15 +331,9 @@ main {
         font-size: 50px;
         writing-mode: horizontal-tb;
         text-align: center;
-        /*margin-top: 20%;
-        margin-left: 0px;
-        margin-right: 0px;*/
-    }
-    
-    .han {
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 10px;
+        align-self: flex-end;
     }
 };
 
@@ -351,7 +345,7 @@ main {
     min-1200px desktop, 
     and min-1800px if you plan on giving 
     the giant-monitor people something special.*/
-    body {
+    main {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -376,7 +370,7 @@ main {
 };
 
 @media screen and (min-width: 900px) {
-    body {
+    main {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -384,7 +378,7 @@ main {
 };
 
 @media screen and (min-width: 1200px) {
-    body {
+    main {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;

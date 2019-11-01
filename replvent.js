@@ -22,7 +22,7 @@ function generateQuestion () {
       return `<div>
       <form >
       <fieldset class="form-field">
-      <p>${QUESTIONS[questionNumber].question}</p>
+      <p>How would you say: ${QUESTIONS[questionNumber].question}</p>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
       <span>${QUESTIONS[questionNumber].answers[0]}</span><br>
@@ -114,7 +114,7 @@ function correctReturn() {
 function wrongReturn() {
     $('.grid').append('.pop-up-wrong').html(`
         <div class="pop-up-wrong">
-            <p class="resultText">Incorrect!</p>
+            <p class="resultText">Incorrect!<br>The correct answer is: ${QUESTIONS[questionNumber].correctAnswer}</p>
             <p class="pop-up-han">错误</p>
             <button class="nextQuestion">Oh No!</button>
         </div>
@@ -183,21 +183,6 @@ function result() {
 function goAgain() {
     $('body').on('click', '#restart', function() {
       location.reload();
-        // $('.excellent').remove();
-        // $('.ok').remove();
-        // $('.bad').remove();
-        // // runQuiz();
-        // //startQuiz();
-        // console.log('#restart');
-        // questionNumber = 1;
-        // debugger
-        // $('.questionNumber').text(1);
-        // $('.scoreNum').text(0);
-        // $('h2').hide();
-        // $('h3').show();
-        // $('.grid', '.zhongGuoImg').show();
-        // generateQuestion();
-        // renderQuestion();
     })
 };
 

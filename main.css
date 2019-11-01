@@ -148,8 +148,8 @@ main {
 }
 
 .pop-up-correct {
-    width: 400px;
-    height: 500px;    
+    width: 500px;
+    height: 600px;    
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(222, 41, 16);
@@ -164,8 +164,8 @@ main {
 }
 
 .pop-up-wrong {
-    width: 400px;
-    height: 500px;    
+    width: 500px;
+    height: 600px;    
     text-align: center;
     letter-spacing: 1px;
     background-color: black;
@@ -213,7 +213,7 @@ main {
 
 .excellent {
     width: 400px;
-    height: 500px;    
+    height: 580px;    
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(222, 41, 16);
@@ -229,7 +229,7 @@ main {
 
 .ok {
     width: 400px;
-    height: 500px;    
+    height: 580px;    
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(255, 187, 0);
@@ -245,7 +245,7 @@ main {
 
 .bad {
     width: 400px;
-    height: 500px;    
+    height: 580px;    
     text-align: center;   
     letter-spacing: 1px;
     background-color: black;
@@ -395,7 +395,7 @@ main {
 
 };
 
-
+/*glitch at 881px*/
 
 
 

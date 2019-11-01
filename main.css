@@ -33,7 +33,7 @@ h2 {
 
 h3 {
     display: none;
-    width: 6%; 
+    width: 25px; 
     height: 27px;
     margin: 5px auto;
     font-size: 20px;
@@ -98,7 +98,7 @@ h3 {
 }
 
 .ansSub {
-    width: 12%;
+    /*width: 12%;*/
     font-size: 25px;
     border-color: 1px solid black;
     font-weight: bold;
@@ -261,7 +261,7 @@ main {
 }
 
 #restart {
-    width: 12%; 
+    /*width: 12%; */
     height: 50px;
     margin: 0 auto;
     font-size: 20px;
@@ -276,6 +276,45 @@ main {
 #restart:hover {
     opacity: 1;
 }
+
+/*tablets*/
+@media screen and  (max-width: 1199px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .form-field, .zhongGuoImg {
+        float: left;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 75%;
+        height: 300px;
+        font-size: 25px;
+        float: left;
+    }
+
+    .hanzi {
+        font-size: 50px;
+        writing-mode: horizontal-tb;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 65%;
+    }
+
+    img {
+        width: 75%;
+        height: 300px;
+        margin-top: 10px;
+        margin-left: 7%;
+    }
+};
 
 /*phone width*/
 @media screen and (max-width: 566px) {
@@ -335,37 +374,6 @@ main {
         margin-left: auto;
         margin-right: auto;
         margin-top: 65%;
-    }
-};
-
-/*tablets*/
-@media screen and  (max-width: 1199px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .form-field, .zhongGuoImg {
-        display: flex;
-        flex-direction: column;
-        width: 450px;
-        height: 300px;
-        font-size: 30px;
-    }
-
-    .hanzi {
-        font-size: 50px;
-        writing-mode: horizontal-tb;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 65%;
-    }
-
-    img {
-        width: 450px;
-        height: 200px;
     }
 };
 

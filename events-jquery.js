@@ -7,7 +7,7 @@ function startQuiz() {
         $('.questionNumber').text(1);
         $('.scoreNum').text(0);
         $('h2').hide();
-        $('h3').show();
+        $('li').show();
         $('.grid', '.zhongGuoImg').show();
         generateQuestion();
         renderQuestion();

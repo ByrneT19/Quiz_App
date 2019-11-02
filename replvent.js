@@ -46,6 +46,7 @@ function generateQuestion () {
     } else {
       result();
       goAgain();
+      $('.questionNumber').text(10);
     }
 
   };

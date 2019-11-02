@@ -35,7 +35,7 @@ h2 {
 
  h3 {
     display: none;
-    max-width:180px;
+    max-width:250px;
     width: 100%;
     margin: auto;
     font-size: 20px;
@@ -286,6 +286,45 @@ main {
     opacity: 1;
 }
 
+/*desktops*/
+@media screen and (min-width: 1200px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 90px;
+    }
+
+    h3 {
+        font-size: 30px;
+        width: 100%;
+    }
+    
+    .form-field {
+        font-size: 30px;
+        float: left;
+        margin-left: 4%;
+    }
+
+    .hanzi {
+        float: right;
+
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+    }
+
+    .excellent, .ok, .bad {
+        width: 200%;
+    }
+};
+
 /*tablets*/
 @media screen and (min-width: 600px) {
     main {
@@ -302,10 +341,6 @@ main {
     h3 {
         width: 100%;
     }
-
-    /* .form-field, .zhongGuoImg { 
-        float: left;
-    }*/
 
     .form-field {
         display: flex;
@@ -343,7 +378,7 @@ main {
     }
 };
 
-/*desktops*/
+/*desktops
 @media screen and (min-width: 1200px) {
     main {
         display: flex;
@@ -364,7 +399,7 @@ main {
     }
     
     .form-field {
-        font-size: 40px;
+        font-size: 45px;
         float: left;
         margin-left: 4%;
     }
@@ -378,7 +413,7 @@ main {
     .excellent, .ok, .bad {
         width: 200%;
     }
-};
+};*/
 
 
 

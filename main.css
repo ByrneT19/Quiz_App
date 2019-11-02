@@ -313,15 +313,33 @@ main {
         margin-left: 4%;
     }
 
+    .ansSub {
+        font-size: 30px;
+    }
+
     .zhongGuoImg {
         display: block;
+        margin-right: 7%;
+    }
+
+    .form-field, .zhongGuoImg {
+        margin-top: 30px;
     }
 
     .hanzi {
         float: right;
-
+        margin-left: 86%;
+        margin-bottom: 10%;
         writing-mode: vertical-lr;
         text-orientation: upright;
+        font-size: 120px;
+    }
+
+    .pop-up-correct {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 120%;
     }
 
     .excellent, .ok, .bad {
@@ -385,45 +403,4 @@ main {
         margin-left: 7%;
     }
 };
-
-/*desktops
-@media screen and (min-width: 1200px) {
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
-    h1 {
-        font-size: 70px;
-    }
-
-    h2 {
-        font-size: 90px;
-    }
-
-    h3 {
-        font-size: 40px;
-    }
-    
-    .form-field {
-        font-size: 45px;
-        float: left;
-        margin-left: 4%;
-    }
-
-    .hanzi {
-        float: right;
-        writing-mode: vertical-lr;
-        text-orientation: upright;
-    }
-
-    .excellent, .ok, .bad {
-        width: 200%;
-    }
-};*/
-
-
-
-
 

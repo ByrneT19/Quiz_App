@@ -57,7 +57,7 @@ function generateImage() {
 
 function renderQuestion () {
     $('.grid').html(generateQuestion());
-    $('.zhongGuiImg').html(generateImage());
+    $('.zhongGuiImg img').html(generateImage());
   }
 
 //increments question number
@@ -85,11 +85,11 @@ function rightOrWrong() {
             console.log('Correct');
             scoreInc();
             correctReturn();
-            $('.zhongGuoImg').hide();
+            $('.zhongGuoImg img').hide();
         }else{
             console.log('Wrong')
             wrongReturn();
-            $('.zhongGuoImg').hide();
+            $('.zhongGuoImg img').hide();
         }
     
     })
@@ -130,7 +130,7 @@ function nextQ() {
         questionInc();
         renderQuestion();
         rightOrWrong();
-        $('.zhongGuoImg').show();
+        $('.zhongGuoImg img').show();
     })
     
 }

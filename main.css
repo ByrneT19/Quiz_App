@@ -35,9 +35,9 @@ h2 {
 
  h3 {
     display: none;
-    width:180px;
-    height: 27px;
-    margin: 0px auto;
+    max-width:180px;
+    width: 100%;
+    margin: auto;
     font-size: 20px;
     font-weight: bold;
     border-radius: 15px;
@@ -49,12 +49,12 @@ h2 {
 
 #quiz-start {
     display: block;
-    width: 12%; 
+    /* width: 12%;  */
     min-width: 100px;
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: rgb(255, 187, 0);
     opacity: 0.75;
     border: 1px solid black;
@@ -85,7 +85,8 @@ h2 {
 }
 
 .form-field {
-    margin-left: 7%;
+    margin: auto;
+    margin-top: 20px;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -93,12 +94,12 @@ h2 {
     border-radius: 15px;
     opacity: 0.75;
     max-width: 800px;
-    padding: 20px;
+    padding: 8px;
 }
 
 .ansSub {
     /*width: 12%;*/
-    font-size: 25px;
+    font-size: 15px;
     border-color: 1px solid black;
     font-weight: bold;
     text-align: center;
@@ -117,6 +118,10 @@ h2 {
     /*display: none;*/
 }
 
+.grid {
+    width: 100%;
+}
+
 .zhongGuoImg {
     display: none;
 }
@@ -133,32 +138,31 @@ img {
 .hanzi {
     /* writing-mode: vertical-rl; */
     /*text-orientation: upright;*/
-    
+    display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
-    margin-right: 0%;
-    margin-left: 0px;
-    margin-top: -45px;
+    /* margin-top: 120px; */
     text-align: center;
-    font-size: 30px;
+    font-size: 45px;
     letter-spacing: 50px;
     font-family: 'Zhi Mang Xing', cursive;
     font-weight: 800;
     color: rgb(222, 41, 16);
     opacity: 0.80;
+    margin-left: 8%;
 }
 
 main {
-    margin-top: 70px;
-    padding-bottom: 100px;
+    /* margin-top: 70px; */
+    /* padding-bottom: 100px; */
     overflow: auto;
     display: block;
 }
 
 .pop-up-correct {
-    width: 500px;
-    height: 600px;    
+    max-width: 500px;  
+    width: 60%;  
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(222, 41, 16);
@@ -169,16 +173,15 @@ main {
     opacity: 0.80;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
 }
 
 .pop-up-wrong {
-    width: 500px;
-    height: 600px;    
+    max-width: 500px;
+    width: 100%;  
     text-align: center;
     letter-spacing: 1px;
     background-color: black;
-    font-size: 25px;    
+    font-size: 20px;    
     font-weight: bold;
     color: white;
     position: relative;
@@ -186,11 +189,10 @@ main {
     opacity: 0.80;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
 }
 
 .pop-up-han {
-    font-size: 200px;
+    font-size: 100px;
     font-family: 'Zhi Mang Xing', cursive;
     writing-mode: vertical-lr;
     margin-left: auto;
@@ -204,16 +206,16 @@ main {
 }
 
 .nextQuestion { 
-    height: 50px;
-    margin: 0 auto;
+    margin: auto;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: rgb(255, 187, 0);
     opacity: 0.75;
     border: 1px solid black;
     text-align: center;
     padding: 1px 6px;
+    display: block;
 }
 
 .nextQuestion:hover {
@@ -221,8 +223,8 @@ main {
 }
 
 .excellent {
-    width: 400px;
-    height: 580px;    
+    max-width: 400px;
+    width: 100%;  
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(222, 41, 16);
@@ -233,12 +235,12 @@ main {
     opacity: 0.80;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
+    margin-bottom: 200px;
 }
 
 .ok {
-    width: 400px;
-    height: 580px;    
+    max-width: 400px;
+    width: 100%;   
     text-align: center;   
     letter-spacing: 1px;
     background-color: rgb(255, 187, 0);
@@ -249,12 +251,11 @@ main {
     opacity: 0.80;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
 }
 
 .bad {
-    width: 400px;
-    height: 580px;    
+    max-width: 400px;
+    width: 100%;    
     text-align: center;   
     letter-spacing: 1px;
     background-color: black;
@@ -266,16 +267,15 @@ main {
     opacity: 0.80;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 125px;
 }
 
 #restart {
     /*width: 12%; */
     height: 50px;
-    margin: 0 auto;
+    margin: auto;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: rgb(255, 187, 0);
     opacity: 0.75;
     border: 1px solid black;
@@ -286,8 +286,8 @@ main {
     opacity: 1;
 }
 
-/*tablets
-@media screen and (min-width: 600px) and (max-width: 1199px) {
+/*tablets*/
+@media screen and (min-width: 600px) {
     main {
         display: flex;
         flex-direction: column;
@@ -295,104 +295,74 @@ main {
         margin-top: 10px;
     }
 
-    .form-field, .zhongGuoImg {
-        float: left;
+    h1, h2 {
+        font-size: 50px;
     }
+
+    h3 {
+        width: 100%;
+    }
+
+    /* .form-field, .zhongGuoImg { 
+        float: left;
+    }*/
 
     .form-field {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 90%;
-        height: 300px;
-        font-size: 20px;
-        float: left;
-        padding: 1px;
+        width: 100%;
+        font-size: 30px;
+        padding: 10px;
     }
 
     .ansSub {
-        font-size: 20px;
+        font-size: 30px;
         margin-top: 2px;
     }
 
     .hanzi {
-        font-size: 50px;
-        writing-mode: horizontal-tb;
+        font-size: 100px;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 65%;
+    }
+
+    .pop-up-han {
+        font-size: 250px;
+    }
+
+    .nextQuestion {
+        font-size: 30px;
     }
 
     img {
-        width: 90%;
+        width: 100%;
         height: 450px;
         margin-top: 10px;
         margin-left: 7%;
     }
 };
 
-phone width
-@media screen and (max-width: 566 599px) {
-    body {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0px;
-        height: 100%;
-    }
-
+/*desktops*/
+@media screen and (min-width: 1200px) {
     main {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
-
-    h1, h2, h3 {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    h3 {
-        display: none;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 10px;
-    }
-
-    #quiz-start {
-        font-size: 20px;
-        width: 40%;
-    }
     
     .form-field {
-        width: 90%;
-        height: 300px;
-        font-size: 50px;
-        padding: 1px;
-    }
-
-    .Q-prompt {
-        font-size: 20px;
-        padding-top: 1px;
-    }
-
-    img {
-        display: none;
+        float: left;
+        margin-left: 4%;
     }
 
     .hanzi {
-        font-size: 50px;
-        writing-mode: horizontal-tb;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 65%;
+        float: right;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
     }
-};*/
+};
 
 
-/*glitch at 881px*/
 
 
 

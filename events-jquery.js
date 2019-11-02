@@ -18,11 +18,11 @@ function startQuiz() {
 
 //generate question 
 function generateQuestion () {
-    if (questionNumber < QUESTIONS.length  -8) {
+    if (questionNumber < QUESTIONS.length) {
       return `<div>
       <form >
       <fieldset class="form-field">
-      <p>${QUESTIONS[questionNumber].question}</p>
+      <p>How would you say: ${QUESTIONS[questionNumber].question}</p>
       <label class="answerOption">
       <input type="radio" value="${QUESTIONS[questionNumber].answers[0]}" name="answer" required>
       <span>${QUESTIONS[questionNumber].answers[0]}</span><br>
@@ -171,8 +171,8 @@ function lowScore() {
 
 //tells user their result
 function result() {
-    if(questionNumber === QUESTIONS.length  -8) {
-        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length  -8);
+    if(questionNumber === QUESTIONS.length) {
+        const scorePerCent = Math.round(100 * scoreNum/QUESTIONS.length);
         return (scorePerCent >= 70) ? exScore():
                 (scorePerCent >=40) ? midScore(): lowScore();
     }

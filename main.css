@@ -239,7 +239,7 @@ main {
 }
 
 .ok {
-    max-width: 400px;
+    max-width: 525px;
     width: 100%;   
     text-align: center;   
     letter-spacing: 1px;
@@ -324,6 +324,7 @@ main {
     .hanzi {
         font-size: 100px;
         text-align: center;
+        letter-spacing: 160px;
     }
 
     .pop-up-han {
@@ -346,11 +347,24 @@ main {
 @media screen and (min-width: 1200px) {
     main {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 90px;
+    }
+
+    h3 {
+        font-size: 40px;
     }
     
     .form-field {
+        font-size: 40px;
         float: left;
         margin-left: 4%;
     }
@@ -359,6 +373,10 @@ main {
         float: right;
         writing-mode: vertical-lr;
         text-orientation: upright;
+    }
+
+    .excellent, .ok, .bad {
+        width: 200%;
     }
 };
 

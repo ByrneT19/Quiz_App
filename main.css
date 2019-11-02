@@ -26,7 +26,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 h2 {
@@ -140,7 +140,7 @@ img {
     /*text-orientation: upright;*/
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     /* margin-top: 120px; */
     text-align: center;
@@ -313,6 +313,10 @@ main {
         margin-left: 4%;
     }
 
+    .zhongGuoImg {
+        display: block;
+    }
+
     .hanzi {
         float: right;
 
@@ -354,6 +358,10 @@ main {
     .ansSub {
         font-size: 30px;
         margin-top: 2px;
+    }
+
+    .zhongGuoImg {
+        display: block;
     }
 
     .hanzi {

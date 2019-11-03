@@ -159,6 +159,7 @@ main {
     /* padding-bottom: 100px; */
     overflow: auto;
     display: block;
+    overflow: hidden;
 }
 
 .pop-up-correct {
@@ -330,7 +331,7 @@ main {
 
     .hanzi {
         float: right;
-        margin-left: 86%;
+        left: 78%;
         margin-bottom: 10%;
         writing-mode: vertical-lr;
         text-orientation: upright;

@@ -38,7 +38,7 @@ h2 {
     max-width:250px;
     width: 100%;
     margin: auto;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 15px;
     background-color: rgb(255, 187, 0);
@@ -49,7 +49,6 @@ h2 {
 
 #quiz-start {
     display: block;
-    /* width: 12%;  */
     min-width: 100px;
     margin: 0 auto;
     font-size: 20px;
@@ -60,18 +59,6 @@ h2 {
     border: 1px solid black;
     text-align: center;
 }
-
-/*.scoreNum {
-    height: 27px;
-    margin: 5px auto;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 15px;
-    background-color: rgb(255, 187, 0);
-    opacity: 0.75;
-    border: none;
-    text-align: center;
-}*/
 
 #quiz-start:hover {
     opacity: 1;
@@ -94,11 +81,11 @@ h2 {
     border-radius: 15px;
     opacity: 0.75;
     max-width: 800px;
-    padding: 8px;
+    padding: 6px;
+    width: 100%;
 }
 
 .ansSub {
-    /*width: 12%;*/
     font-size: 15px;
     border-color: 1px solid black;
     font-weight: bold;
@@ -113,11 +100,6 @@ h2 {
     opacity: 1;
 }
 
-.grid, .zhongGuoImg {
-    float: left;
-    /*display: none;*/
-}
-
 .grid {
     width: 100%;
 }
@@ -128,22 +110,19 @@ h2 {
 }
 
 img {
-    max-width: 700px;
+    max-width: 600px;
     width: 100%;
-    margin-right: 1%;
-    margin-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
     border: 5px solid rgb(255, 187, 0);  
     border-radius: 3px; 
 }
 
 .hanzi {
-    /* writing-mode: vertical-rl; */
-    /*text-orientation: upright;*/
     display: block;
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* margin-top: 120px; */
     text-align: center;
     font-size: 45px;
     letter-spacing: 50px;
@@ -155,8 +134,6 @@ img {
 }
 
 main {
-    /* margin-top: 70px; */
-    /* padding-bottom: 100px; */
     overflow: auto;
     display: block;
     overflow: hidden;
@@ -308,11 +285,20 @@ main {
         font-size: 30px;
         width: 100%;
     }
+
+    #quiz-start {
+        font-size: 30px;
+    }
     
     .form-field {
         font-size: 30px;
         float: left;
-        margin-left: 4%;
+        width: 100%;
+    }
+
+    .grid {
+        padding-left: 20px;
+        font-size: 40px;
     }
 
     .ansSub {
@@ -321,44 +307,62 @@ main {
 
     .zhongGuoImg {
         display: block;
-        margin-right: 7%;
+        float: right;
+        position: absolute;
+        left: 56%;
+    }
+
+    img {
         width: 100%;
     }
 
     .form-field, .zhongGuoImg {
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
     .hanzi {
         float: right;
-        left: 78%;
+        left: 72%;
         margin-bottom: 10%;
         writing-mode: vertical-lr;
         text-orientation: upright;
-        font-size: 120px;
+        font-size: 150px;
     }
 
     .pop-up-correct {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        font-size: 30px;
+    }
+
+    .pop-up-han {
+        font-size: 300px;
+    }
+
+    .nextQuestion {
+        font-size: 30px;
     }
 
     .excellent, .ok, .bad {
         width: 200%;
     }
-};
+}
 
 /*tablets*/
-@media screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
     main {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        margin-top: 10px;
+        justify-content: center;
+        /* margin-top: 10px; */
     }
 
-    h1, h2 {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
         font-size: 50px;
     }
 
@@ -367,28 +371,35 @@ main {
     }
 
     .form-field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         width: 100%;
-        font-size: 30px;
+        font-size: 20px;
         padding: 10px;
     }
 
     .ansSub {
-        font-size: 30px;
+        font-size: 20px;
         margin-top: 2px;
     }
 
     .zhongGuoImg {
         display: block;
-        width: 100%;
+    } 
+    
+    img {
+        margin-top: 10px;
+        height: 400px;
+        position: absolute;
+	    max-width: 80%;
+	    top: 42%;
+	    left: 10%;
     }
 
     .hanzi {
-        font-size: 100px;
+        font-size: 70px;
         text-align: center;
-        letter-spacing: 160px;
+        letter-spacing: 120px;
+        bottom: 0;
+        position: absolute;
     }
 
     .pop-up-han {
@@ -399,11 +410,6 @@ main {
         font-size: 30px;
     }
 
-    img {
-        width: 100%;
-        height: 450px;
-        margin-top: 10px;
-        margin-left: 7%;
-    }
-};
+   
+}
 

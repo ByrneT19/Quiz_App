@@ -54,8 +54,8 @@ function generateQuestion () {
 //generates question image
 function generateImage() {  
     $('.china-img').attr('src', `images/${QUESTIONS[questionNumber].questionImage}`);
-    $('.china-img').attr('alt', `${QUESTIONS[questionNumber].alt}`);
-}
+    $('.china-img').attr('alt', `${QUESTIONS[questionNumber].alt}`);  
+}  
 
 function renderQuestion () {
     $('.grid').html(generateQuestion());

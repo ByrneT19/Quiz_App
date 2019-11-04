@@ -114,7 +114,7 @@ img {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid rgb(255, 187, 0);  
+    /*border: 5px solid rgb(255, 187, 0);*/
     border-radius: 3px; 
     display: none;
 }
@@ -267,7 +267,7 @@ main {
 }
 
 /*desktops*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1607px) {
     main {
         display: flex;
         flex-direction: row;
@@ -351,7 +351,7 @@ main {
     }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1199px) {
+@media screen and (min-width: 900px) and (max-width: 1606px) {
     main {
         display: flex;
         flex-direction: column;
@@ -383,7 +383,7 @@ main {
     }
 
     .zhongGuoImg {
-        /* display: block; */
+        display: block;
     } 
     
     img {
@@ -393,7 +393,7 @@ main {
 	    max-width: 74%;
 	    top: 44%;
         left: 13%;
-        /* display: block; */
+        display: block;
     }
 
     .hanzi {

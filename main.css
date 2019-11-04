@@ -116,6 +116,7 @@ img {
     margin-right: auto;
     border: 5px solid rgb(255, 187, 0);  
     border-radius: 3px; 
+    display: none;
 }
 
 .hanzi {
@@ -309,11 +310,12 @@ main {
         display: block;
         float: right;
         position: absolute;
-        left: 56%;
+        left: 22%;
     }
 
     img {
         width: 100%;
+        display: block;
     }
 
     .form-field, .zhongGuoImg {
@@ -349,8 +351,81 @@ main {
     }
 }
 
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* margin-top: 10px; */
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    h3 {
+        width: 100%;
+    }
+
+    .form-field {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .ansSub {
+        font-size: 15px;
+        margin-top: 2px;
+    }
+
+    .zhongGuoImg {
+        /* display: block; */
+    } 
+    
+    img {
+        margin-top: 10px;
+        height: 300px;
+        position: absolute;
+	    max-width: 74%;
+	    top: 44%;
+        left: 13%;
+        /* display: block; */
+    }
+
+    .hanzi {
+        font-size: 55px;
+        text-align: center;
+        letter-spacing: 120px;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .pop-up-han {
+        font-size: 200px;
+    }
+
+    .pop-up-wrong {
+        width: 100%;
+    }
+
+    .resultText {
+        font-size: 15px;
+    }
+
+    .nextQuestion {
+        font-size: 30px;
+    }
+
+   
+}
+
+
 /*tablets*/
-@media only screen and (min-width: 600px) and (max-width: 1199px) {
+@media only screen and (min-width: 600px) and (max-width: 899px) {
     main {
         display: flex;
         flex-direction: column;
@@ -391,7 +466,8 @@ main {
         position: absolute;
 	    max-width: 80%;
 	    top: 42%;
-	    left: 10%;
+        left: 10%;
+        display: block;
     }
 
     .hanzi {

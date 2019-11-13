@@ -1,14 +1,6 @@
-A basic Chinese language learning app for beginners
+A basic Chinese language learning app for beginners with a basic understanding of Chinese pronunciation to learn 
+some useful phrases for their first time in China.
 
 
 
 
-
-
-So when your question starts, you can add a call like this.
-
-$( "img" ).css([ "border", "5px solid rgb(255, 187, 0)"]);
-
-and when you're back to start page, you can add a call like this.
-
-$( "img" ).css([ "border", "none"]);
